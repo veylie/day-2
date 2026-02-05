@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flip Card Photo Gallery</title>
+<style>
+body{
+    margin:0;
+    background:#0a0a0a;
+    font-family:'Georgia', serif;
+    display:flex;
+    justify-content:center;
+    align-items:center; 
+    min-height:100vh; 
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4, 220px);
+    gap:40px;
+    padding:40px;
+    width:auto;
+    max-width:none;
+}
+
+.card{
+    width:220px;
+    height:308px;
+    perspective:1200px;
+}
+
+.card-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform 0.9s cubic-bezier(.4,.2,.2,1);
+}
+
+.card:hover .card-inner{
+    transform:rotateY(180deg);
+}
+
+.face{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:16px;
+    backface-visibility:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+
+.front{
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:64px;
+    font-weight:bold;
+}
+
+.front .rank{
+    position:absolute;
+    top:14px;
+    left:14px;
+    font-size:22px;
+}
+
+.front .suit{
+    position:absolute;
+    top:42px;
+    left:14px;
+    font-size:20px;
+}
+
+.front .rank.br{
+    bottom:14px;
+    right:14px;
+    top:auto;
+    left:auto;
+}
+
+.front .suit.br{
+    bottom:42px;
+    right:14px;
+    top:auto;
+    left:auto;
+}
+
+.back{
+    transform:rotateY(180deg);
+    overflow:hidden;
+}
+
+.back img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.red{color:#c00000;}
+.black{color:#000;}
+</style>
+</head>
+
+<body>
+<div class="gallery">
+<div class="card">
+<div class="card-inner">
+<div class="face front">
+<span class="rank red">A</span>
+<span class="suit red">♥</span>
+<span>A</span>
+<span class="rank red br">A</span>
+<span class="suit red br">♥</span>
+</div>
+<div class="face back">
+<img src="adalah pokoknya di album gue ini foto">
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-inner">
+<div class="face front">
+<span class="rank black">K</span>
+<span class="suit black">♠</span>
+<span>K</span>
+<span class="rank black br">K</span>
+<span class="suit black br">♠</span>
+</div>
+<div class="face back">
+<img src="adalah pokoknya di album gue ini foto">
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-inner">
+<div class="face front">
+<span class="rank red">Q</span>
+<span class="suit red">♦</span>
+<span>Q</span>
+<span class="rank red br">Q</span>
+<span class="suit red br">♦</span>
+</div>
+<div class="face back">
+<img src="adalah pokoknya di album gue ini foto">
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-inner">
+<div class="face front">
+<span class="rank black">J</span>
+<span class="suit black">♣</span>
+<span>J</span>
+<span class="rank black br">J</span>
+<span class="suit black br">♣</span>
+</div>
+<div class="face back">
+<img src="adalah pokoknya di album gue ini foto">
+</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
